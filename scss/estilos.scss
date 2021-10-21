@@ -1,0 +1,308 @@
+@import "tienda";
+@import "cuenta";
+@import "grillaindex";
+@import "servicios";
+@import "contacto";
+h2, h3{
+	color: white;
+
+}
+
+
+#subx3{
+	color: #15009e;
+	text-align: center;
+
+
+}
+.prodest{
+	color: white;
+
+}
+.subtienda{
+	text-decoration: none;
+	color:white;
+	font-size: 13px;
+
+}
+.subserv{
+	text-decoration: none;
+	color:white;
+	font-size: 13px;
+}
+.subcuenta{
+	text-decoration: none;
+	color:white;
+	font-size: 13px;
+
+}
+
+table{	
+	border: 2px solid;
+
+
+}
+li{
+	color: white;
+	display: inline-block;
+   	width: 25%;
+   	position:relative;
+   	font-size: 12px;
+   	width: 250px;
+	height: 40px;
+	text-decoration: none;
+}
+ul{
+	list-style-type: disc;
+	
+	list-style: none;
+   	font-size:0;
+   	text-decoration: none;
+   	color: white;
+   	padding: 0;
+
+
+}
+ul ul {
+  	position: absolute;
+   	display: none;
+   	text-decoration: none;
+   	color: white;
+}
+ul ul li {
+   
+  	text-decoration: none;
+   	color: white;
+   	width: 100% ;
+
+}
+ul li:hover ul {
+   	display:block;
+   	text-decoration: none;
+   	color: white;
+
+}
+ul li:hover ul a:hover {
+  
+  	display:block;
+  	text-decoration: none;
+  	font-size: 13px	;
+}
+
+
+table{
+	display: table;
+	margin: 0 auto;
+}
+
+
+th{
+
+	border: 0.5px solid;
+	background-color: #d4f6ff;
+	
+
+}
+
+td{
+	color: white;
+}
+
+
+
+#menuindex a:hover{
+	
+	color: #2d54d6;
+	text-decoration: none;
+	font-weight: 200px;
+	font-size: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	
+
+}
+.nav-item {
+	
+	background-color: black;
+	text-decoration: none;
+	font-size: 14px;
+ 	text-align: center;
+  	display: block;
+  	color: white;
+ 	padding: 10px;
+  	text-transform: uppercase;
+	
+}
+header{
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+
+	
+
+}
+
+body{
+	font-family: 'Shippori Mincho B1', serif;
+	background-color: #d4f6ff;
+	height: 1280px;
+	
+
+
+}
+
+a:hover{
+	text-decoration: none;
+	background-color: #6baaf2;
+
+}
+
+.imagenbutton{
+
+	background-image: url('https://images.unsplash.com/photo-1567928513899-997d98489fbd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	padding-bottom: 100px;
+	padding-top: 100px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: 2px black solid;
+
+}	
+
+
+
+button{
+	border-radius: 50px;
+	background-color: #d4f6ff; 
+
+	font-family: 'Shippori Mincho B1', serif;
+	color: black;
+
+}
+
+.logotipo{
+	background-color: black; 
+
+
+}
+footer{
+	font-style: italic;
+	background-color: black;
+	color: white ;
+	display: flex;
+	margin:	70px auto;
+	padding-top: 30px;
+
+
+
+}
+
+.iconostitulos{
+	
+	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 100px;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding-right: 285px;
+	padding-left: 285px;
+	margin:	70px auto;
+	padding-bottom: 30px;
+	padding-top: 30px;
+
+}
+.historia{
+	h5{
+		text-align: center;
+	p{
+
+	font-style: italic;
+	width: 500px;
+	height: 300px;
+	border-right-width: 1px;
+	border-right-style: solid;
+
+	}
+	
+	
+	}
+	
+
+}
+.historiap{
+	text-align: center;
+
+}
+.stock{
+
+	height: 100px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.exper{
+
+	height: 100px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.atencion{
+
+	height: 100px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+
+.facebookicon{
+	width: 75px;
+    height: 75px;
+    padding-right: 30px;
+	padding-left: 30px;
+}
+.instagramicon{
+	width: 75px;
+    height: 75px;
+    padding-right: 30px;
+	padding-left: 30px;
+}
+.whatsappicon{
+	width: 75px;
+    height: 75px;
+    padding-right: 30px;
+	padding-left: 30px;
+}
+
+
+.logoscontacto1{
+	display: flex;
+	flex-direction: row;
+	margin-right: 50px;
+	margin-left: 50px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.contactoconjunto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	border-right-width: 1px;
+	border-right-style: solid;
+	height: 300px;
+
+}
+
+.formularioinicio{
+	padding-left: 10px;
+
+}
+
+/** CUENTA**/
+
+
