@@ -45,8 +45,8 @@ const prodIng= products.filter(product=>product.name.includes(ingresado))
 document.write("<h4>Producto buscado. </h4>")
 
 for (var products of prodIng){
-    document.write("<h4> Nombre del producto buscado. </h4>")*/
-}
+    document.write("<h4> Nombre del producto buscado. </h4>")
+}*/
 
 
 item={}
