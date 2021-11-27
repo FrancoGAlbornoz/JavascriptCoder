@@ -58,7 +58,7 @@
 
 	<div class="container center">
     
-    <form  method="GET" class="formulariocuenta">
+    <form class="formulariocuenta">
       
       <h1 class="formulario__titulo">
         Cuenta E-Tienda
@@ -92,23 +92,26 @@
       <div class="paso-1-B">
         
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombreUs">
         
         <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido">
+        <input type="text" name="apellido" id="apellidoUs">
         
         <label for="nombre">Email</label>
-        <input type="email" name="email" id="mail">
+        <input type="email" name="email" id="mailUs">
         
         <label for="password">Password</label>
-        <input type="password" name="password" id="pass">
-        <button id="Registrarme">Registrarme</button>
-        
+        <input type="password" name="password" id="passUs">
+        <button onclick="registrar()" id="Registrarme">Registrarme</button>
+
       </div>
-      
-     
+
       
     </form>
+
+	<div id="mensaje">
+
+	</div>
 
 
     <div class="logoscontacto2">

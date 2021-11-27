@@ -1,21 +1,67 @@
 class User{
-    constructor(nombre, genero, edad, dni, email){
+    constructor(nombre, apellido , pass , email){
         this.nombre= nombre
-        this.genero= genero
-        this.edad= edad
-        this.dni = dni
+        this.apellido = this.apellido
+        this.pass = pass
         this.email = email
     }
 
 }
 
-const user=[]
-alert("Registrate")
-const nombreUs= prompt("Ingrese su nombre y apellido")
-const generoUs= prompt("Ingresa tu genero")
-const edadUs= prompt("Ingresa tu edad")
-const dniUs= prompt("Ingresa tu dni")
-const emailUs= prompt("Ingresa tu email")
-user.push(new User(nombreUs,generoUs,edadUs,dniUs,emailUs))
 
-console.log(user)
+/*let users = []
+let user= {
+
+    nombre: nombre.value,
+    apellido: apellido.value,
+    mail: mail.value,
+    pass: pass.value,
+
+}
+users.push(user)*/
+
+function registrar(){
+    const nombre = document.getElementById("nombreUs")
+    const apellido = document.getElementById("apellidoUs")
+    const pass = document.getElementById("passUs")
+    const mail = document.getElementById("mailUs")
+
+    const mensaje= document.getElementById("mensaje")
+
+    if(nombre.value==nombre && pass.value==pass){
+
+        console.log("B")
+        const welcome =document.createElement("p")
+        welcome.innerHTML="Bienvenido"
+        welcome.style.color = "red"
+        welcome.style.fontSize = "40px"
+    
+        mensaje.appendChild(welcome)
+
+
+    }else{
+        console.log("Error")
+    }
+    
+
+    console.log(usuario.value);
+    //console.log(users)
+    
+
+}
+
+
+function template(){
+
+
+    let mensaje = document.getElementById("mensaje");
+    mensaje.innerHTML = `<h2>Datos del usuario</h2>
+                         <p>Nombre del usuario: ${nombre}</p>
+                         
+                         <p>Email del usuario: ${email}</p>                       
+    `;
+
+}
+
+
+
