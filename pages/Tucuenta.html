@@ -53,6 +53,7 @@
 
 	</header>
 
+	<div id="mensaje2"></div>
 
 	<div class="contenedor__todo">
 		<div class="caja__trasera">
@@ -71,44 +72,44 @@
 		<!--Formulario de Login y registro-->
 		<div class="contenedor__login-register">
 			<!--Login-->
-			<form action="" class="formulario__login" method="GET">
+			
+			<form action="" class="formulario__login" method="POST">
+				
 				<h2>Iniciar Sesión</h2>
-				<input type="text" placeholder="Correo Electronico" id="mail">
-				<input type="password" placeholder="Contraseña" id="pass">
-				<button id="Entrar">Entrar</button>
+				<div id="inputLog">
+
+					<input type="text" placeholder="Correo Electronico" name="email">
+					<input type="password" placeholder="Contraseña" name="passw">
+					<button id="Entrar">Entrar</button>
+
+				</div>
 			</form>
 
 			<!--Register-->
-			<form action="" class="formulario__register" method="GET">
+			<form action="" class="formulario__register" method="POST">
 				<h2>Regístrarse</h2>
-				<input type="text" placeholder="Nombre completo" id="nombre">
-				<input type="text" placeholder="Correo Electronico" id="mail">
-				<input type="text" placeholder="Usuario" id="usuario">
-				<input type="password" placeholder="Contraseña" id="pass">
+				<div id="inputReg">
+					<input type="text" placeholder="Nombre completo" name="nombre" class="nombre">
+					<input type="text" placeholder="Usuario" name="usuario" class="usuario">
+					<input type="text" placeholder="Correo Electronico" name="mail" class="email">
+					<input type="password" placeholder="Contraseña" name="pass" class="pass">
+				</div>
 				<button id="Registrarme">Regístrarse</button>
 			</form>
+		<br>
 
-		</div><br><div id="mensaje"></div>
+		</div>
 
-	</div>
-
-
-    <div class="logoscontacto2">
-
-    	<h4>SEGUINOS!</h4>
-	
-
-	<div class= "contactoconjunto2">
-		<a href="https://www.facebook.com/"><img class="facebookicon" src="../imagenes/facebookicon.png" alt="Facebook"> </a>
-		<a href="https://www.instagram.com/"><img class="instagramicon" src="../imagenes/instagramicon.png" alt="Instagram"> </a>
-		<a href="https://www.whatsapp.com/"> <img class="whatsappicon" src="../imagenes/whatsappicon.png" alt="Whatsapp"></a>	
 		
+		
+		<br>
+
+		<div id="mensaje"></div>
+
 	</div>
 
-  </div>
-
-
-
+	<div ><p>Ejemplos de usuarios y mail</p></div>
+	<div class="examp"></div>
 
 
 

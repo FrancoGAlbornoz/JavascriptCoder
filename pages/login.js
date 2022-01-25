@@ -10,71 +10,49 @@ function saveInLocalStorage(key, item) {
 
 }
 
-let users = []
+
+
+let users = getLocalStorage('users') || []
+
 console.log(users)
 
-if (getLocalStorage('users')) {
 
-    users = getLocalStorage('users')
+
+let datosUser={}
+
+//
+
+function keyup (inputForm){
+
+    $("#"+inputForm).children("input").each(function(){
+        $(this).keyup(function(){
+
+            datosUser[$(this).attr("name")] = $(this).val()
+            renderUser()
+            
+        })
+        
+    })
+
 
 }
 
+keyup("inputReg")
+keyup("inputLog")
 
-let nombre = document.querySelector('#nombre')
- nombre.addEventListener('keyup', function () {
+//
 
-  console.log(nombre.value)
+document.querySelector('#Entrar').addEventListener('click', function (event) {
+    event.preventDefault()
 
-})
-
-let apellido = document.querySelector('#usuario')
-
-usuario.addEventListener('keyup', function () {
-
-    console.log(usuario.value)
-
-})
-
-let mail = document.querySelector('#mail')
-
-mail.addEventListener('keyup', function () {
-
-    console.log(Number(mail.value))
-
-})
-
-let pass = document.querySelector('#pass')
-
-pass.addEventListener('keyup', function () {
-
-    console.log(Number(pass.value))
-
-})
-
-
-
-let btn = document.querySelector('#Registrarme')
-
-btn.addEventListener('click', function (event) {
- event.preventDefault()
-
-   let user = {
-
-     nombre: nombre.value,
-     usuario: usuario.value,
-     mail: mail.value,
-     pass: pass.value,
-
-   }
-
-   users.push(user)
-   saveInLocalStorage('users', users)
-
-   const mensaje= document.getElementById("mensaje")
+   let user = users.find(user => user.email == datosUser.email ) || {email: null , pass: null}
+   console.log(datosUser)
    
-   if(nombre==nombre.value && pass==pass.value){
+
+   if(user.pass == datosUser.passw){
    
-       console.log("B")
+        //Mensaje o cartel de bienvenida
+       
        const welcome =document.createElement("p")
        welcome.innerHTML="Bienvenido"
        welcome.style.color = "red"
@@ -86,19 +64,79 @@ btn.addEventListener('click', function (event) {
        console.log("Error")
    }
 
+
+
+})
+
+//
+
+document.querySelector('#Registrarme').addEventListener('click', function (event) {
+    event.preventDefault()
+
+   users.push(datosUser)
+   console.log(datosUser)
+   
+    saveInLocalStorage("usuarios" , users)
+
+
+   
 })
 
 
-let mensaje = document.getElementById("mensaje");
-   mensaje.innerHTML = `<h2>Datos del usuario</h2>
-                       <p>Nombre del usuario: ${nombre.value}</p>
-                            
-                       <p>Email del usuario: ${mail.value}</p>                       
-       `;
+
+//
+
+function renderUser(){
+
+    if(datosUser?.nombre && datosUser?.mail){
+        
+        $("#mensaje").html(`
+       
+        <h2>Datos ingresados por el usuario</h2>
+    
+        <p>Nombre del usuario: ${datosUser?.nombre || "Ingrese usuario"}</p>
+    
+        <p>Email del usuario: ${datosUser?.mail}</p>
+    
+        `)
+    }
+    
+}
+
+renderUser()
+
+//
+
+const URLJSON = "../database/userData.json"
+
+$(".examp").prepend('<button id="btn1">Ejemplo</button>');
+
+$("#btn1").click(() => { 
+$.getJSON(URLJSON, function (respuesta, estado) {
+    if(estado === "success"){
+      let misDatos = respuesta;
+      for (const dato of misDatos) {
+        $("body").append(`<div>
+                                <p>Ejemplo de usuario : ${dato.usuario}</p>
+                                <p> Ejemplo de e-mail : ${dato.email}</p>
+                                <p> Ejemplo de password : ${dato.pass}</p>
+
+                            </div>`)
+        console.log(dato)
+      }  
+    }
+    });
+});
 
 
 
-//Ejecutando funciones
+
+
+
+
+
+// ANIMACIONES
+//Ejecutando funciones 
 document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
 document.getElementById("btn__registrarse").addEventListener("click", register);
 window.addEventListener("resize", anchoPage);
@@ -111,6 +149,7 @@ var caja_trasera_login = document.querySelector(".caja__trasera-login");
 var caja_trasera_register = document.querySelector(".caja__trasera-register");
 
    //FUNCIONES
+
 
 function anchoPage(){
 
@@ -165,6 +204,31 @@ anchoPage();
 
 
 
-
+/*var http = new XMLHttpRequest()
+var url = "../database/userData.json"
+var email = document.getElementsByClassName('email')
+var usuario = document.getElementsByClassName('usuario')
+http.open("POST", url, true)
+http.onreadystatechange = function() {
+    if(http.readyState == 4 && http.status == 200) {
+       alert(http.responseText);
+    }
+}
+http.send(JSON.stringify({usuario : usuario, email : email}));
+$('#Registrarme').click(function(){
+    var data = { usuario : $('.usuario').val(), email : $('.email').val() };
+    $.ajax({
+            url : '../database/userData.json',
+            data : data,
+            method : 'POST', //en este caso
+            dataType : 'json',
+            success : function(response){
+                alert('BIENVENIDO')
+            },
+            error: function(error){
+                alert('ERROR')
+            }
+    });
+});*/
 
 
